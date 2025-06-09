@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Mahasiswa Baru</title>
+  <link rel="stylesheet" href="signup.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="registration-container">
+    <div class="header">
+      <h1>Pendaftaran Mahasiswa Baru</h1>
+      <div class="progress-bar">
+        <div class="progress-step active" data-step="1">1</div>
+        <div class="progress-step" data-step="2">2</div>
+        <div class="progress-step" data-step="3">3</div>
+      </div>
+    </div>
+
+    <form id="registrationForm" enctype="multipart/form-data">
+      <!-- Step 1: Personal Information -->
+      <div class="form-step active" data-step="1">
+        <h2>Informasi Pribadi</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nama_lengkap">Nama Lengkap</label>
+            <input type="text" id="nama_lengkap" name="nama_lengkap" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="no_hp">Nomor HP</label>
+            <input type="tel" id="no_hp" name="no_hp" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="jenis_kelamin">Jenis Kelamin</label>
+            <select id="jenis_kelamin" name="jenis_kelamin" required>
+              <option value="">Pilih Jenis Kelamin</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="tempat_lahir">Tempat Lahir</label>
+            <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="tanggal_lahir">Tanggal Lahir</label>
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+          </div>
+          
+          <div class="form-group full-width">
+            <label for="alamat_lengkap">Alamat Lengkap</label>
+            <textarea id="alamat_lengkap" name="alamat_lengkap" required></textarea>
+          </div>
+        </div>
+        
+        <div class="form-navigation">
+          <button type="button" class="next-btn">Selanjutnya →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: School Information -->
+      <div class="form-step" data-step="2">
+        <h2>Asal Sekolah</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="provinsi">Provinsi</label>
+            <select id="provinsi" name="provinsi" required>
+              <option value="">Pilih Provinsi</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="kabupaten_kota">Kabupaten/Kota</label>
+            <select id="kabupaten_kota" name="kabupaten_kota" required>
+              <option value="">Pilih Kabupaten/Kota</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="jenis_sekolah">Jenis Sekolah</label>
+            <select id="jenis_sekolah" name="jenis_sekolah" required>
+              <option value="">Pilih Jenis Sekolah</option>
+              <option value="SMA">SMA</option>
+              <option value="SMK">SMK</option>
+              <option value="MA">MA</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="nama_sekolah">Nama Sekolah</label>
+            <input type="text" id="nama_sekolah" name="nama_sekolah" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="jurusan_sekolah">Jurusan Sekolah</label>
+            <input type="text" id="jurusan_sekolah" name="jurusan_sekolah" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="tahun_lulus">Tahun Lulus</label>
+            <select id="tahun_lulus" name="tahun_lulus" required>
+              <option value="">Pilih Tahun Lulus</option>
+              <!-- Filled by JavaScript -->
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-navigation">
+          <button type="button" class="prev-btn">← Sebelumnya</button>
+          <button type="button" class="next-btn">Selanjutnya →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Program Selection & Documents -->
+      <div class="form-step" data-step="3">
+        <h2>Pilihan Program Studi</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="pilihan_1">Pilihan Program Studi 1</label>
+            <select id="pilihan_1" name="pilihan_1" required>
+              <option value="">Pilih Program Studi</option>
+              <option value="PTI">S1 Pendidikan Teknologi Informasi</option>
+              <option value="PGSD">S1 Pendidikan Guru Sekolah Dasar</option>
+              <option value="PGPAUD">S1 Pendidikan Guru PAUD</option>
+              <option value="BK">S1 Bimbingan Konseling</option>
+              <option value="SENDRATASIK">S1 Seni Tari dan Musik</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="pilihan_2">Pilihan Program Studi 2 (Opsional)</label>
+            <select id="pilihan_2" name="pilihan_2">
+              <option value="">Pilih Program Studi</option>
+              <option value="PTI">S1 Pendidikan Teknologi Informasi</option>
+              <option value="PGSD">S1 Pendidikan Guru Sekolah Dasar</option>
+              <option value="PGPAUD">S1 Pendidikan Guru PAUD</option>
+              <option value="BK">S1 Bimbingan Konseling</option>
+              <option value="SENDRATASIK">S1 Seni Tari dan Musik</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="jalur_pendaftaran">Jalur Pendaftaran</label>
+            <select id="jalur_pendaftaran" name="jalur_pendaftaran" required>
+              <option value="">Pilih Jalur</option>
+              <option value="Gelombang 1">Gelombang 1</option>
+              <option value="Gelombang 2">Gelombang 2</option>
+              <option value="Gelombang 3">Gelombang 3</option>
+              <option value="KIP">Jalur KIP</option>
+              <option value="Prestasi">Jalur Prestasi</option>
+            </select>
+          </div>
+        </div>
+
+        <h2>Upload Berkas</h2>
+        <div class="document-upload">
+          <div class="upload-group">
+            <label for="foto">Foto (Format JPG/PNG, maks 1MB)</label>
+            <input type="file" id="foto" name="foto" accept="image/jpeg,image/png" required>
+          </div>
+          
+          <div class="upload-group">
+            <label for="ijazah">Ijazah (Format PDF, maks 1MB)</label>
+            <input type="file" id="ijazah" name="ijazah" accept=".pdf" required>
+          </div>
+          
+          <div class="upload-group">
+            <label for="raport_10">Raport Kelas 10 (PDF, maks 1MB)</label>
+            <input type="file" id="raport_10" name="raport_10" accept=".pdf" required>
+          </div>
+          
+          <div class="upload-group">
+            <label for="raport_11">Raport Kelas 11 (PDF, maks 1MB)</label>
+            <input type="file" id="raport_11" name="raport_11" accept=".pdf" required>
+          </div>
+          
+          <div class="upload-group">
+            <label for="raport_12">Raport Kelas 12 (PDF, maks 1MB)</label>
+            <input type="file" id="raport_12" name="raport_12" accept=".pdf" required>
+          </div>
+          
+          <div class="upload-group kip-only">
+            <label for="kip_card">Kartu KIP (PDF, maks 1MB)</label>
+            <input type="file" id="kip_card" name="kip_card" accept=".pdf">
+          </div>
+          
+          <div class="upload-group prestasi-only">
+            <label for="sertifikat_prestasi">Sertifikat Prestasi (PDF, maks 1MB)</label>
+            <input type="file" id="sertifikat_prestasi" name="sertifikat_prestasi" accept=".pdf">
+          </div>
+        </div>
+        
+        <div class="form-navigation">
+          <button type="button" class="prev-btn">← Sebelumnya</button>
+          <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
